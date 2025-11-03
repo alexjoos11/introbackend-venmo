@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "9c499e88-3ec3-4182-8a22-37e4dc622a56",
+		"name": "venmo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49538738",
+		"_collection_link": "https://alexjoos11-2232471.postman.co/workspace/introbackend-venmo~40a4fb35-2f21-4044-bbaf-da7d00107307/collection/49538738-9c499e88-3ec3-4182-8a22-37e4dc622a56?action=share&source=collection_link&creator=49538738"
+	},
+	"item": [
+		{
+			"name": "create user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {\r",
+							"  pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body matches expected output\", () => {\r",
+							"  const expected = {\r",
+							"    id: 1,\r",
+							"    name: \"Alex\",\r",
+							"    username: \"aaj46\",\r",
+							"    balance: 0\r",
+							"  };\r",
+							"  pm.expect(pm.response.json()).to.eql(expected);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Alex\",\r\n  \"username\": \"aaj46\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/users/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {\r",
+							"  pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body matches expected output\", () => {\r",
+							"  const expected = {\r",
+							"    id: 2,\r",
+							"    name: \"Balex\",\r",
+							"    username: \"bbj46\",\r",
+							"    balance: 10\r",
+							"  };\r",
+							"  pm.expect(pm.response.json()).to.eql(expected);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Balex\",\r\n  \"username\": \"bbj46\",\r\n  \"balance\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/users/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {\r",
+							"  pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body matches expected output\", () => {\r",
+							"  const expected = {\r",
+							"    id: 3,\r",
+							"    name: \"Calex\",\r",
+							"    username: \"ccj46\",\r",
+							"    balance: 25\r",
+							"  };\r",
+							"  pm.expect(pm.response.json()).to.eql(expected);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Calex\",\r\n  \"username\": \"ccj46\",\r\n  \"balance\": 25\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/users/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body matches expected output\", () => {\r",
+							"  const expected = {\r",
+							"    users: [\r",
+							"      { id: 1, name: \"Alex\",  username: \"aaj46\"  },\r",
+							"      { id: 2, name: \"Balex\", username: \"bbj46\" },\r",
+							"      { id: 3, name: \"Calex\", username: \"ccj46\" }\r",
+							"    ]\r",
+							"  };\r",
+							"  pm.expect(pm.response.json()).to.eql(expected);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/users/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 400",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"NoUsername\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/users/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body matches expected output\", () => {\r",
+							"  const expected = {\r",
+							"    id: 2,\r",
+							"    name: \"Balex\",\r",
+							"    username: \"bbj46\",\r",
+							"    balance: 10\r",
+							"  };\r",
+							"  pm.expect(pm.response.json()).to.eql(expected);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/user/2/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", () => {\r",
+							"  pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/user/9999/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"9999",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body matches expected output\", () => {\r",
+							"  const expected = {\r",
+							"    id: 3,\r",
+							"    name: \"Calex\",\r",
+							"    username: \"ccj46\",\r",
+							"    balance: 25\r",
+							"  };\r",
+							"  pm.expect(pm.response.json()).to.eql(expected);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/user/3/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", () => {\r",
+							"  pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/user/3/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send money",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body matches expected output\", () => {\r",
+							"  const expected = {\r",
+							"    sender_id: 2,\r",
+							"    receiver_id: 1,\r",
+							"    amount: 6\r",
+							"  };\r",
+							"  pm.expect(pm.response.json()).to.eql(expected);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender_id\": 2,\r\n  \"receiver_id\": 1,\r\n  \"amount\": 6\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/send/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send money 400 bad request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender_id\": 2,\r\n  \"receiver_id\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/send/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send money 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", () => {\r",
+							"  pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender_id\": 9999,\r\n  \"receiver_id\": 1,\r\n  \"amount\": 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/send/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send money 400 (bad balance)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender_id\": 2,\r\n  \"receiver_id\": 1,\r\n  \"amount\": 100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/send/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
