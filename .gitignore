@@ -5,3 +5,4 @@ venv/
 .db
 src/pa2_test.py
 venv
+src/todo.db
