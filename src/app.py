@@ -86,7 +86,6 @@ def send_money():
         return json.dumps({"error":"Receiver not found"}), 404
     
     #valid balance check
-    
     sender_balance = sender.get("balance", 0)
     if sender_balance - amount < 0:
         return json.dumps({"error":"Insufficient balance"}), 400
