@@ -3,5 +3,5 @@ __pycache__/
 venv/
 .vscode/
 .db
-pa2_test.py
+src/pa2_test.py
 venv
